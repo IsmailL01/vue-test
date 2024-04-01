@@ -63,7 +63,7 @@ export default {
 <style lang="css" scoped>
 .card-container {
   display: flex;
-  min-width: 600px;
+  width: 600px;
   min-height: 220px;
   color: rgb(245, 245, 245);
   background-color: rgb(70, 70, 70);

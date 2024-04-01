@@ -1,14 +1,19 @@
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import { axiosInstance } from "@/shared/config/axios/axiosInstance";
 
-export function useCards() {
+export function useCards(limit, currentPage) {
   const cards = ref([]);
   const isLoading = ref(false);
+
   const fetching = async () => {
     try {
       isLoading.value = true;
 
-      const response = await axiosInstance.get("character");
+      const response = await axiosInstance.get("character", {
+        params: {
+          page: currentPage.value,
+        },
+      });
 
       cards.value = response.data.results;
     } catch (error) {
@@ -18,6 +23,7 @@ export function useCards() {
     }
   };
 
+  watch(currentPage, () => fetching());
   onMounted(fetching);
   return {
     cards,

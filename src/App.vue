@@ -5,6 +5,7 @@
 
 <script>
 import Navbar from "./components/Navbar.vue";
+
 export default {
   components: { Navbar },
 };
@@ -12,6 +13,10 @@ export default {
 
 <style>
 #app {
+}
+
+html {
+  overflow-x: hidden;
 }
 
 * {

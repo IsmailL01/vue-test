@@ -11,7 +11,9 @@
     "axios": "^1.6.8",
     "core-js": "^3.8.3",
     "create-vue": "^3.10.2",
-    "vue": "^3.2.13",
+    "sass": "^1.72.0",
+    "sass-loader": "^14.1.1",
+    "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
